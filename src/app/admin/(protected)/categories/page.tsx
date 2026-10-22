@@ -5,16 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Plus, Edit, Trash2 } from 'lucide-react';
 
 export default function CategoriesPage() {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchCategories = async () => {
     try {
       const res = await fetch('/api/categories');
       const data = await res.json();
-      setCategories(data);
+      setCategories(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error(err);
+      setCategories([]);
     } finally {
       setLoading(false);
     }

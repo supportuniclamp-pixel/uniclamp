@@ -9,8 +9,9 @@ export async function GET() {
     await dbConnect();
     const products = await Product.find({}).populate('category', 'name slug').sort({ createdAt: -1 }).lean();
     return NextResponse.json(products);
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
+  } catch (error: any) {
+    console.error('Error fetching products:', error);
+    return NextResponse.json({ error: 'Failed to fetch products', details: error?.message || String(error) }, { status: 500 });
   }
 }
 

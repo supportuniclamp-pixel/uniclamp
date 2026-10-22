@@ -21,7 +21,10 @@ export function ProductForm({ initialData }: { initialData?: any }) {
   });
 
   useEffect(() => {
-    fetch('/api/categories').then(res => res.json()).then(data => setCategories(data));
+    fetch('/api/categories')
+      .then(res => res.json())
+      .then(data => setCategories(Array.isArray(data) ? data : []))
+      .catch(() => setCategories([]));
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
