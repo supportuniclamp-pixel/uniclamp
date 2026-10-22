@@ -6,6 +6,7 @@ import { Plus, Edit, Trash2, ExternalLink } from 'lucide-react';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<any[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [loading, setLoading] = useState(true);
 
   const fetchProjects = async () => {
@@ -48,6 +49,28 @@ export default function ProjectsPage() {
         </Link>
       </div>
 
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <div className="flex flex-wrap gap-2 items-center">
+          {['All', 'Industrial', 'Infrastructure', 'Commercial', 'Healthcare', 'Hospitality', 'Energy'].map(cat => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                selectedCategory === cat
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-xs'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {cat}
+              <span className="ml-1.5 opacity-70 text-[11px]">
+                ({cat === 'All' ? projects.length : projects.filter(p => (p.category || '').toLowerCase() === cat.toLowerCase()).length})
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -71,8 +94,12 @@ export default function ProjectsPage() {
               </tr>
             ) : projects.length === 0 ? (
               <tr><td colSpan={6} className="p-4 text-center text-gray-500">No projects found. Add your first project!</td></tr>
+            ) : projects.filter(p => selectedCategory === 'All' || (p.category || '').toLowerCase() === selectedCategory.toLowerCase()).length === 0 ? (
+              <tr><td colSpan={6} className="p-8 text-center text-gray-500">No projects found in "{selectedCategory}" category.</td></tr>
             ) : (
-              projects.map((p: any) => (
+              projects
+                .filter(p => selectedCategory === 'All' || (p.category || '').toLowerCase() === selectedCategory.toLowerCase())
+                .map((p: any) => (
                 <tr key={p._id} className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="p-4">
                     <div className="font-medium text-gray-900">{p.name}</div>
