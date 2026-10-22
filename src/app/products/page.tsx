@@ -84,7 +84,7 @@ export default function Products() {
                         <span className="product-card-status">Standard Spec</span>
                         <div className="product-card-img-wrap">
                           <img
-                            src={p.images?.[0] || '/placeholder.png'}
+                            src={p.images?.[0] || '/assets/products.jpg'}
                             alt={p.name}
                             loading="lazy"
                             width="600"
@@ -98,11 +98,13 @@ export default function Products() {
                           {cat.name}
                         </span>
                         <h3 className="product-card-title">{p.name}</h3>
-                        <p className="product-card-desc">{p.shortDescription || p.description}</p>
+                        <p className="product-card-desc">
+                          {p.shortDescription || p.description || 'Engineered industrial clamp and fixing solution built for dependable performance and heavy-duty structural stability.'}
+                        </p>
                         <div className="product-card-footer">
-                          <span className="product-card-action-text font-semibold">View Details</span>
+                          <span className="product-card-action-text font-semibold">View Specifications</span>
                           <span className="product-card-action-btn">
-                            <ArrowUpRight size={17} />
+                            <ArrowUpRight size={16} />
                           </span>
                         </div>
                       </div>

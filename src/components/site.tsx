@@ -109,10 +109,86 @@ export function SiteHeader() {
     </header>
   );
 }
-export function Hero({ title, description, label = 'ENGINEERED FOR EXCELLENCE', image = images.factory, home = false, children }: { title: React.ReactNode; description: string; label?: string; image?: string; home?: boolean; children?: React.ReactNode }) {
+const HERO_SLIDES = [
+  {
+    url: typeof images.factory === 'string' ? images.factory : (images.factory as any).src,
+    alt: 'High precision industrial pipe manufacturing and storage plant',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=1920&q=80',
+    alt: 'Heavy duty steel pipes and structural support assemblies',
+  },
+  {
+    url: typeof images.products === 'string' ? images.products : (images.products as any).src,
+    alt: 'Engineered pipe clamps and industrial fixing systems',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&q=80',
+    alt: 'Industrial pipe plant engineering, fitting and inspection',
+  },
+];
+
+export function Hero({
+  title,
+  description,
+  label = 'ENGINEERED FOR EXCELLENCE',
+  image = images.factory,
+  home = false,
+  children,
+}: {
+  title: React.ReactNode;
+  description: string;
+  label?: string;
+  image?: string;
+  home?: boolean;
+  children?: React.ReactNode;
+}) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (!home) return;
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % HERO_SLIDES.length);
+    }, 3500); // 3.5 seconds transition
+    return () => clearInterval(interval);
+  }, [home]);
+
   return (
     <section className={`hero ${home ? '' : 'page-hero'}`}>
-      <img src={image} alt="Industrial engineering and manufacturing environment" className="hero-img" width="1920" height="1024" />
+      {home ? (
+        <div className="hero-slides-wrapper" aria-hidden="true">
+          {HERO_SLIDES.map((slide, idx) => (
+            <img
+              key={`hero-slide-${idx}`}
+              src={slide.url}
+              alt={slide.alt}
+              className={`hero-slide ${currentSlide === idx ? 'active' : ''}`}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              width="1920"
+              height="1024"
+            />
+          ))}
+          <div className="hero-indicators" role="tablist" aria-label="Slide indicators">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={`hero-dot-${idx}`}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                className={`hero-indicator-dot ${currentSlide === idx ? 'active' : ''}`}
+                aria-label={`Jump to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <img
+          src={image}
+          alt="Industrial engineering and manufacturing environment"
+          className="hero-img"
+          width="1920"
+          height="1024"
+        />
+      )}
       <div className="container hero-content">
         <div className="eyebrow animate-fade-up"><span className="badge-dot" />{label}</div>
         <h1 className="animate-fade-up delay-100">{title}</h1>
@@ -268,7 +344,86 @@ export function ProjectCards({ items = projects.slice(0, 3) }: { items?: typeof 
 export function Features() { return <div className="features">{[{ Icon: Cog, title: 'Engineering Expertise', copy: 'Thoughtful design. Practical solutions. Precision at every stage.' }, { Icon: ShieldCheck, title: 'Quality Without Compromise', copy: 'A detail-driven approach to materials, processes and performance.' }, { Icon: Wrench, title: 'Solutions That Fit', copy: 'Flexible systems developed for real-world project requirements.' }, { Icon: Leaf, title: 'Built for the Long Run', copy: 'Reliable products and considered engineering for lasting value.' }].map((f, i) => <Reveal delay={i * 100} key={f.title}><div className="feature"><f.Icon size={30} strokeWidth={1.5} /><h3>{f.title}</h3><p className="copy">{f.copy}</p></div></Reveal>)}</div>; }
 export function IndustryStrip() { return <div className="industry-strip"><div className="container industry-inner"><span>Supporting progress<br />across industries</span>{[{ Icon: Factory, name: 'Manufacturing' }, { Icon: Building2, name: 'Construction' }, { Icon: Wrench, name: 'Infrastructure' }, { Icon: Zap, name: 'Energy & Utilities' }].map(x => <div key={x.name} className="industry-item"><x.Icon strokeWidth={1.5} />{x.name}</div>)}</div></div>; }
 export function CTA() { return <section className="cta-band"><div className="container cta-inner"><div><div className="eyebrow mb-4"><span className="badge-dot" />YOUR NEXT PROJECT STARTS HERE</div><h2>Let’s build something <span className="text-stronger-animated">exceptional.</span></h2><p>The right products. The right expertise. <strong className="text-secondary font-semibold">A stronger partnership.</strong></p></div><Button variant="brand" size="lg" asChild className="btn-sheen hover-lift"><Link href="/contact">Contact Our Team <ArrowUpRight /></Link></Button></div></section>; }
-export function SiteFooter() { const [subscribed, setSubscribed] = useState(false); return <footer className="site-footer"><div className="container"><div className="footer-grid"><div><Logo /><p className="mt-5 max-w-64">Precision-engineered pipe supports and fixing systems. Connecting ideas. Supporting progress.</p></div><div><h3>Explore UNIclamp</h3>{links.slice(1).map(l => <Link key={l.to} href={l.to}>{l.name}</Link>)}</div><div><h3>Our Solutions</h3>{products.slice(0, 4).map(p => <Link key={p.slug} href={`/products/${p.slug}`}>{p.name}</Link>)}</div><div><h3>Stay Connected</h3><p>Product updates and engineering insights.</p><form onSubmit={e => { e.preventDefault(); setSubscribed(true); }} className="newsletter"><input type="email" className="newsletter-input" placeholder="Your email address" aria-label="Newsletter email" required /><Button variant="brand" size="icon" aria-label="Subscribe"><ArrowRight /></Button></form>{subscribed && <p role="status" className="mt-3">Newsletter delivery is not connected yet.</p>}<Link href="/contact" className="mt-5"><Mail size={15} className="inline mr-2" />Talk to our team</Link></div></div><div className="footer-bottom"><span>© 2026 UNIclamp. All rights reserved.</span><span>PIPE SUPPORTS & FIXING SYSTEMS</span></div></div></footer>; }
+export function SiteFooter() {
+  const [subscribed, setSubscribed] = useState(false);
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div>
+            <Logo />
+            <div className="mt-4">
+              <span className="text-[11px] font-bold tracking-wider uppercase text-secondary block mb-1">
+                Primary Business
+              </span>
+              <p className="text-[13px] font-semibold text-white/90 mb-2">
+                Pipe Clamp Manufacturing &amp; Fixing Systems
+              </p>
+              <p className="text-[12px] opacity-75 leading-relaxed max-w-xs">
+                Precision-engineered pipe supports and fixing systems. Connecting ideas. Supporting progress.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3>Explore UNIclamp</h3>
+            {links.slice(1).map(l => (
+              <Link key={l.to} href={l.to}>{l.name}</Link>
+            ))}
+          </div>
+
+          <div>
+            <h3>Our Solutions</h3>
+            {products.slice(0, 4).map(p => (
+              <Link key={p.slug} href={`/products/${p.slug}`}>{p.name}</Link>
+            ))}
+            <Link href="/products" className="font-semibold text-secondary mt-2 inline-flex items-center gap-1">
+              View All Products <ArrowRight size={12} />
+            </Link>
+          </div>
+
+          <div>
+            <h3>Registered Office &amp; Contact</h3>
+            <p className="text-[11px] font-bold text-white/95 uppercase tracking-wide mb-1">
+              PIPE SUPPORTS AND FIXING SYSTEMS PRIVATE LIMITED
+            </p>
+            <p className="text-[12px] leading-relaxed opacity-80 mb-3">
+              F-C/705 Bhagirath Residency, Ganesh Nagar, Badlapur E.D., Ambarnath, Thane – 421503, Maharashtra, India
+            </p>
+            <div className="pt-2 border-t border-white/10 space-y-2">
+              <div className="text-[12px]">
+                <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block">Business Email</span>
+                <a
+                  href="mailto:pipesupportsystems@gmail.com"
+                  className="inline-flex items-center gap-1.5 text-white/95 hover:text-secondary transition-colors font-medium break-all"
+                >
+                  <Mail size={13} className="shrink-0 text-secondary" />
+                  pipesupportsystems@gmail.com
+                </a>
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 text-[12px] text-white/90 hover:text-secondary transition-colors font-medium pt-1"
+              >
+                <ArrowUpRight size={13} className="text-secondary" />
+                Submit an enquiry online
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+            <span>© 2026 UNIclamp. All rights reserved.</span>
+            <span className="hidden sm:inline opacity-40">|</span>
+            <span>PIPE SUPPORTS &amp; FIXING SYSTEMS PVT LTD</span>
+          </div>
+          <span>Primary Business: Pipe Clamp Manufacturing</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
 export function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 

@@ -74,11 +74,33 @@ export default function Contact() {
               Tell us what you’re working on. From product selection to project-specific requirements, we’ll help you take the next step.
             </p>
             {[
-              { Icon: Wrench, title: 'Product & Technical Enquiries', copy: 'Pipe supports, fixing systems and custom solutions.' },
-              { Icon: Building2, title: 'Project Partnerships', copy: 'Engineering requirements and application-specific support.' },
-              { Icon: Mail, title: 'Company Contact Details', copy: 'Official address, email and phone details are available through our team.' },
-            ].map(c => (
-              <div className="contact-detail" key={c.title}>
+              {
+                Icon: Building2,
+                title: 'PIPE SUPPORTS & FIXING SYSTEMS PVT LTD',
+                copy: 'Primary Business: Pipe Clamp Manufacturing & Engineered Fixing Systems. Providing high-performance industrial support solutions.',
+              },
+              {
+                Icon: Mail,
+                title: 'Business Email & Correspondence',
+                copy: (
+                  <span>
+                    Direct enquiries:{' '}
+                    <a
+                      href="mailto:pipesupportsystems@gmail.com"
+                      className="text-primary font-semibold underline underline-offset-2 hover:text-secondary transition-colors"
+                    >
+                      pipesupportsystems@gmail.com
+                    </a>
+                  </span>
+                ),
+              },
+              {
+                Icon: Wrench,
+                title: 'Registered Office Address',
+                copy: 'F-C/705 Bhagirath Residency, Ganesh Nagar, Badlapur E.D., Ambarnath, Thane – 421503, Maharashtra, India.',
+              },
+            ].map((c, idx) => (
+              <div className="contact-detail" key={idx}>
                 <c.Icon size={25} />
                 <div>
                   <h3>{c.title}</h3>

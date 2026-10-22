@@ -356,18 +356,35 @@ export default function Quality() {
 function Paper({ item, zoom = false }: { item: CertItem; zoom?: boolean }) {
   if (!item) return null;
 
+  if (item.pdfUrl) {
+    return (
+      <div
+        className={`relative w-full rounded-lg border border-gray-300 bg-gray-100 overflow-hidden shadow-inner transition-all ${
+          zoom ? 'h-[750px]' : 'h-[520px]'
+        }`}
+      >
+        <iframe
+          src={`${item.pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`}
+          title={item.name}
+          className="w-full h-full border-none bg-white"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
   if (item.imageUrl) {
     return (
       <div
-        className={`relative overflow-hidden flex items-center justify-center bg-gray-900/5 rounded-xl border border-gray-200 transition-all ${
+        className={`relative overflow-hidden flex items-center justify-center bg-gray-50 rounded-lg border border-gray-300 transition-all ${
           zoom ? 'min-h-[580px] p-2' : 'min-h-[420px] p-4'
         }`}
       >
         <img
           src={item.imageUrl}
           alt={item.name}
-          className={`object-contain max-h-full max-w-full rounded-lg transition-transform duration-300 ${
-            zoom ? 'scale-125' : 'scale-100'
+          className={`object-contain max-h-full max-w-full rounded transition-transform duration-200 ${
+            zoom ? 'scale-110' : 'scale-100'
           }`}
           style={{ maxHeight: zoom ? '540px' : '390px' }}
         />
@@ -378,10 +395,10 @@ function Paper({ item, zoom = false }: { item: CertItem; zoom?: boolean }) {
   return (
     <div className={`cert-paper ${zoom ? 'min-h-[560px]' : ''}`}>
       <Award size={45} />
-      <span className="eyebrow mb-6">STANDARD REFERENCE</span>
+      <span className="eyebrow mb-6">CERTIFICATE RECORD</span>
       <strong>{item.name}</strong>
       <p>{item.title}</p>
-      <small>PREVIEW ONLY · NOT AN ISSUED CERTIFICATE</small>
+      <small>{item.certificateNumber}</small>
     </div>
   );
 }
