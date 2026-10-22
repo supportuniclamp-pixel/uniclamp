@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Enquiry from '@/models/Enquiry';
+import { sendEnquiryEmail } from '@/lib/mailer';
 
 export async function GET() {
   try {
@@ -23,6 +24,23 @@ export async function POST(req: NextRequest) {
 
     await dbConnect();
     const enquiry = await Enquiry.create(body);
+
+    // Send email notification via SMTP
+    try {
+      await sendEnquiryEmail({
+        fullName,
+        email,
+        company: body.company,
+        phone: body.phone,
+        subject,
+        product: body.product,
+        message,
+      });
+    } catch (mailError) {
+      console.error('Failed to send enquiry email notification:', mailError);
+      // Still succeed so user sees submission confirmation even if SMTP throws
+    }
+
     return NextResponse.json(
       { success: true, message: 'Your enquiry has been received successfully!', enquiry },
       { status: 201 }

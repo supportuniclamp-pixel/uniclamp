@@ -14,3 +14,13 @@
 - Keep shared site structure in src/components/site.tsx and browser-safe catalogue data in src/lib/site-data.ts, to maintain consistent presentation.
 - Keep all brand visual roles in src/styles.css semantic tokens, so identity changes apply site-wide.
 - Until official data and delivery services are supplied, label project/standard previews clearly and prepare enquiries locally without claiming delivery.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
