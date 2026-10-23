@@ -74,10 +74,10 @@ export default async function Home() {
                 <span className="text-shimmer">Smarter engineering.</span>
               </h2>
               <p className="copy">
-                Behind every great structure is a system you can rely on. At UNIclamp, we bring together engineering insight and manufacturing precision to create pipe supports and fixing solutions that work harder.
+                Established in 2026, <strong>Pipe Supports and Fixing Systems Private Limited</strong> (UNIclamp) is focused on providing dependable, high-quality pipe support and fixing solutions for industrial, commercial, and infrastructure applications.
               </p>
               <p className="copy mt-4">
-                From individual components to integrated support systems, we focus on what matters: strength, simplicity and dependable performance.
+                Engineered for Strength. Designed for Reliability. Built on Trust. From pipe clamps and strut channels to rubber support inserts and anti-vibration systems, we engineer support that lasts.
               </p>
               <Button variant="link" asChild className="px-0 mt-5 transition-transform hover:translate-x-1">
                 <Link href="/about">Discover Our Story <ArrowUpRight /></Link>
