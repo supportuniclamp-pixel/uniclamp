@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { Layout, Hero, Heading } from '@/components/site';
 import { images } from '@/lib/site-data';
+import { OurStoryExpandable } from '@/components/our-story-expandable';
+import { AboutUsExpandable } from '@/components/about-us-expandable';
 
 export const metadata = {
   title: 'About Us | Pipe Supports and Fixing Systems Private Limited (UNIclamp)',
@@ -34,27 +36,27 @@ const coreStrengths = [
   {
     icon: Award,
     title: 'Quality Commitment',
-    desc: 'Uncompromising focus on dependable, durable products and consistent manufacturing quality across every batch.'
+    desc: 'Focus on dependable products and consistent quality.'
   },
   {
     icon: Layers,
-    title: 'Comprehensive Product Range',
-    desc: 'Full-spectrum offerings: pipe clamps, strut channels, accessories, rubber support inserts, and anti-vibration systems.'
+    title: 'Product Range',
+    desc: 'Pipe clamps, strut channels, accessories, rubber support inserts, and anti-vibration products.'
   },
   {
     icon: Target,
-    title: 'Customer-Centric Focus',
-    desc: 'Precision solutions tailored to exact project requirements, technical specifications, and unique field application needs.'
+    title: 'Customer Focus',
+    desc: 'Solutions tailored to project requirements and application needs.'
   },
   {
     icon: HeartHandshake,
     title: 'Reliable Support',
-    desc: 'Responsive technical assistance, agile communication, and a long-term commitment to client success and trust.'
+    desc: 'Responsive service and a commitment to long-term business relationships.'
   },
   {
     icon: TrendingUp,
     title: 'Continuous Improvement',
-    desc: 'An ongoing drive for better products, refined manufacturing processes, advanced technologies, and superior customer value.'
+    desc: 'An ongoing focus on better products, processes, and customer value.'
   }
 ];
 
@@ -62,32 +64,32 @@ const missionPillars = [
   {
     num: '01',
     title: 'Quality Excellence',
-    desc: 'Maintaining consistent product quality, dimensional accuracy, and rugged operational reliability.'
+    desc: 'Maintaining consistent product quality and reliability.'
   },
   {
     num: '02',
     title: 'Customer Satisfaction',
-    desc: 'Deeply understanding customer needs to deliver practical, value-driven engineering solutions.'
+    desc: 'Understanding customer needs and delivering practical, value-driven solutions.'
   },
   {
     num: '03',
-    title: 'Innovation & Precision',
-    desc: 'Continuously refining products, advanced tooling designs, and manufacturing processes.'
+    title: 'Innovation',
+    desc: 'Continuously improving our products, designs, and processes.'
   },
   {
     num: '04',
-    title: 'Dependable Reliability',
-    desc: 'Delivering robust products that ensure safety and providing responsive, dependable customer service.'
+    title: 'Reliability',
+    desc: 'Providing dependable products and responsive customer service.'
   },
   {
     num: '05',
     title: 'Long-Term Partnerships',
-    desc: 'Cultivating enduring relationships founded on transparency, integrity, and mutual respect.'
+    desc: 'Building lasting relationships through trust, transparency, and professionalism.'
   },
   {
     num: '06',
     title: 'Continuous Growth',
-    desc: 'Embracing next-generation technologies and responsible, sustainable business practices.'
+    desc: 'Embracing new technologies and responsible business practices to create sustainable value.'
   }
 ];
 
@@ -134,23 +136,7 @@ export default function About() {
             <h2 className="section-title mt-4 mb-6">
               Engineering solutions that power modern infrastructure.
             </h2>
-            <p className="copy text-base leading-relaxed">
-              Established in 2026, <strong>Pipe Supports and Fixing Systems Private Limited</strong> is focused on providing dependable, high-quality pipe support and fixing solutions for industrial, commercial, and infrastructure applications. We aim to meet the evolving needs of modern piping installations through reliable products, customer-focused service, and a commitment to quality.
-            </p>
-            <p className="copy mt-4 text-base leading-relaxed">
-              Our comprehensive portfolio includes <strong>Pipe Clamps, Strut Channels &amp; Accessories, Rubber Support Inserts, and Anti-Vibration Products</strong>. Our engineered systems support secure pipe installations, facilitate efficient mounting and fixing, and effectively mitigate vibration- and noise-related challenges.
-            </p>
-            <div className="mt-8 p-5 rounded-lg border border-primary/15 bg-muted/60 flex items-start gap-4">
-              <ShieldCheck className="w-8 h-8 text-primary shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-bold text-primary text-sm mb-1 uppercase tracking-wide">
-                  Engineered for Performance &amp; Value
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  We recognize that every project has unique technical and operational requirements. That is why we emphasize product functionality, durability, dimensional accuracy, and ease of installation. Our objective is to help customers achieve efficient installation, dependable performance, and long-term value.
-                </p>
-              </div>
-            </div>
+            <AboutUsExpandable />
           </div>
           <div className="relative">
             <img
@@ -203,6 +189,7 @@ export default function About() {
                 </div>
 
                 <div className="p-4 rounded-lg bg-muted/60 border border-primary/10 mb-6">
+                  <div className="text-xs font-bold uppercase tracking-wider text-primary/70 mb-1">Official Vision Statement:</div>
                   <p className="text-sm font-semibold text-primary italic leading-relaxed">
                     &ldquo;To become a trusted name in pipe supports and fixing systems, supporting progress through quality, innovation, and engineering excellence.&rdquo;
                   </p>
@@ -213,10 +200,16 @@ export default function About() {
                     At Pipe Supports and Fixing Systems Private Limited, our vision is to become a trusted and recognized leader in the pipe supports and fixing systems industry by delivering innovative, reliable, and high-quality engineering solutions.
                   </p>
                   <p>
-                    We aspire to set new benchmarks in product quality, technical excellence, and customer satisfaction through continuous innovation, advanced manufacturing practices, and a commitment to reliability. Our goal is to support industrial, commercial, and infrastructure growth with durable solutions tailored to evolving demands.
+                    We aspire to set new benchmarks in product quality, technical excellence, and customer satisfaction through continuous innovation, advanced manufacturing practices, and a commitment to reliability. Our goal is to support the growth of industrial, commercial, and infrastructure sectors with durable and efficient solutions that meet evolving industry requirements.
                   </p>
                   <p>
-                    We envision building long-term partnerships by understanding customer needs, delivering consistent value, and upholding the highest standards of integrity, safety, and professionalism.
+                    We envision building long-term partnerships with our customers by understanding their needs, delivering consistent value, and maintaining the highest standards of integrity and professionalism.
+                  </p>
+                  <p>
+                    Through sustainable growth, continuous improvement, and a customer-first approach, we aim to contribute to the development of safer, stronger, and more efficient piping systems across diverse applications.
+                  </p>
+                  <p className="font-semibold text-primary pt-2">
+                    Our Vision: To become a trusted name in pipe supports and fixing systems, supporting progress through quality, innovation, and engineering excellence.
                   </p>
                 </div>
               </div>
@@ -244,6 +237,7 @@ export default function About() {
                 </div>
 
                 <div className="p-4 rounded-lg bg-muted/60 border border-secondary/30 mb-6">
+                  <div className="text-xs font-bold uppercase tracking-wider text-primary/70 mb-1">Official Mission Statement:</div>
                   <p className="text-sm font-semibold text-primary italic leading-relaxed">
                     &ldquo;To engineer reliable support, deliver lasting quality, and build stronger partnerships through innovation and customer commitment.&rdquo;
                   </p>
@@ -254,17 +248,52 @@ export default function About() {
                     At Pipe Supports and Fixing Systems Private Limited, our mission is to deliver high-quality, reliable, and cost-effective pipe support and fixing solutions that meet the diverse needs of industrial, commercial, and infrastructure projects.
                   </p>
                   <p>
-                    We are dedicated to providing products that unite strength, durability, precision, and ease of installation while maintaining rigorous focus on quality, safety, and customer satisfaction.
+                    We are committed to providing products that combine strength, durability, precision, and ease of installation while maintaining a strong focus on quality, safety, and customer satisfaction.
                   </p>
                   <p>
-                    Through our specialized product range, we strive to become a dependable partner for contractors, consultants, distributors, OEMs, and industrial customers by delivering solutions they can trust with absolute confidence.
+                    Through our product range, including Pipe Clamps, Strut Channels and Accessories, Rubber Support Inserts, and Anti-Vibration Products, we strive to offer dependable solutions that support efficient piping installations and meet the evolving requirements of our customers.
+                  </p>
+                  <div>
+                    <strong className="text-primary block mb-2 font-semibold">We aim to achieve our mission through:</strong>
+                    <ul className="space-y-2 list-none pl-0">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Quality Excellence:</strong> Maintaining consistent product quality and reliability.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Customer Satisfaction:</strong> Understanding customer needs and delivering practical, value-driven solutions.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Innovation:</strong> Continuously improving our products, designs, and processes.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Reliability:</strong> Providing dependable products and responsive customer service.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Long-Term Partnerships:</strong> Building lasting relationships through trust, transparency, and professionalism.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={16} className="text-secondary shrink-0 mt-0.5" />
+                        <span><strong>Continuous Growth:</strong> Embracing new technologies and responsible business practices to create sustainable value.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <p className="pt-2">
+                    Our mission is to become a dependable partner for contractors, consultants, distributors, OEMs, and industrial customers by delivering solutions they can trust.
+                  </p>
+                  <p className="font-semibold text-primary">
+                    Our Mission: To engineer reliable support, deliver lasting quality, and build stronger partnerships through innovation and customer commitment.
                   </p>
                 </div>
               </div>
 
               <div className="pt-6 mt-6 border-t border-border flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
                 <CheckCircle2 size={16} className="text-secondary" />
-                Engineered Support • Lasting Quality • Customer Commitment
+                Reliable Support • Lasting Quality • Stronger Partnerships
               </div>
             </div>
           </div>
@@ -318,23 +347,7 @@ export default function About() {
               <h2 className="section-title mt-4 mb-6">
                 Our Story: Pipe Supports and Fixing Systems Private Limited
               </h2>
-              <div className="space-y-4 copy text-base leading-relaxed">
-                <p>
-                  At <strong>Pipe Supports and Fixing Systems Private Limited</strong>, our journey began in 2026 with a clear vision: to provide reliable, innovative, and high-quality pipe support and fixing solutions for modern industrial, commercial, and infrastructure projects.
-                </p>
-                <p>
-                  We understand that behind every efficient piping system lies the need for strength, stability, safety, and precision. With this understanding, we are committed to developing products that support critical piping installations while meeting the evolving needs of our customers and the industry.
-                </p>
-                <p>
-                  Each product category reflects our focus on functionality, durability, installation efficiency, and dependable performance across a wide range of applications.
-                </p>
-                <p>
-                  We believe that quality is the foundation of lasting relationships. We strive to combine engineering excellence, consistent product quality, and customer-focused service to deliver solutions that add value to every project we serve.
-                </p>
-                <p className="font-semibold text-primary pt-2">
-                  As a growing company, we are driven by continuous improvement, innovation, and responsible business practices. Looking ahead, our ambition is to establish ourselves as a trusted name recognized for product reliability, technical competence, and customer satisfaction.
-                </p>
-              </div>
+              <OurStoryExpandable />
             </div>
           </div>
         </div>

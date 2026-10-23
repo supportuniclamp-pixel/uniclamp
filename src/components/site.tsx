@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, useRef, ReactNode } from 'react';
-import { ArrowRight, ArrowUpRight, Menu, X, Factory, Building2, Zap, Wrench, ShieldCheck, CheckCircle2, Cog, Leaf, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Menu, X, Factory, Building2, Zap, Wrench, ShieldCheck, CheckCircle2, Cog, Leaf, Mail, Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Carousel,
@@ -327,11 +327,10 @@ export function ProductCards({ items = products, limit }: { items?: any[], limit
                 type="button"
                 onClick={() => api?.scrollTo(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`transition-all duration-300 rounded-full h-2 ${
-                  current === idx
+                className={`transition-all duration-300 rounded-full h-2 ${current === idx
                     ? 'w-8 bg-primary shadow-sm'
                     : 'w-2 bg-primary/20 hover:bg-primary/40'
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -391,15 +390,44 @@ export function SiteFooter() {
               F-C/705 Bhagirath Residency, Ganesh Nagar, Badlapur E.D., Ambarnath, Thane – 421503, Maharashtra, India
             </p>
             <div className="pt-2 border-t border-white/10 space-y-2">
-              <div className="text-[12px]">
-                <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block">Business Email</span>
-                <a
-                  href="mailto:pipesupportsystems@gmail.com"
-                  className="inline-flex items-center gap-1.5 text-white/95 hover:text-secondary transition-colors font-medium break-all"
-                >
-                  <Mail size={13} className="shrink-0 text-secondary" />
-                  pipesupportsystems@gmail.com
-                </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[12px]">
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block mb-0.5">
+                    Business Email
+                  </span>
+                  <a
+                    href="mailto:pipesupportsystems@gmail.com"
+                    className="inline-flex items-center gap-1.5 text-white/95 hover:text-secondary transition-colors font-medium break-all"
+                  >
+                    <Mail size={13} className="shrink-0 text-secondary" />
+                    pipesupportsystems@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block mb-0.5">
+                    Contact / WhatsApp
+                  </span>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="tel:+919579294968"
+                      className="inline-flex items-center gap-1 text-white/95 hover:text-secondary transition-colors font-medium whitespace-nowrap"
+                    >
+                      <Phone size={13} className="shrink-0 text-secondary" />
+                      9579294968
+                    </a>
+                    <span className="text-white/30">|</span>
+                    <a
+                      href="https://wa.me/919579294968"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-white/95 hover:text-[#25D366] transition-colors font-medium whitespace-nowrap"
+                      title="Chat on WhatsApp"
+                    >
+                      <MessageCircle size={13} className="shrink-0 text-[#25D366]" />
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
               </div>
               <Link
                 href="/contact"
@@ -445,3 +473,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </>
   );
 }
+
