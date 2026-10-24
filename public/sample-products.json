@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Standard Pipe Clamp with EPDM Lining",
+    "slug": "standard-pipe-clamp-epdm-lining",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Two-piece clamp with sound insulation lining for standard mechanical installations.",
+    "description": "High-grade electro-galvanized two-piece clamp engineered for pipe stabilization and acoustic dampening. Suitable for heating, sanitary, and acoustic insulation projects.",
+    "mainImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+    "specificationImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Type",
+        "value": "EPDM Lined Split Clamp"
+      },
+      {
+        "key": "Material",
+        "value": "Mild Steel / Electro-Galvanized"
+      },
+      {
+        "key": "Sizes",
+        "value": "1/2\" to 8\" (15mm – 200mm)"
+      },
+      {
+        "key": "Finish",
+        "value": "Zinc Plated (5-10 Micron)"
+      },
+      {
+        "key": "Acoustic Insulation",
+        "value": "DIN 4109 compliant EPDM rubber"
+      },
+      {
+        "key": "Temperature Range",
+        "value": "-40°C to +110°C"
+      }
+    ]
+  },
+  {
+    "name": "Heavy Duty Clevis Hanger",
+    "slug": "heavy-duty-clevis-hanger",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Adjustable clevis hanger for suspending stationary insulated or non-insulated pipelines.",
+    "description": "Engineered clevis hanger fabricated from high-strength carbon steel. Provides vertical adjustment after installation to accommodate required piping gradients.",
+    "mainImage": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Type",
+        "value": "Adjustable Clevis Hanger"
+      },
+      {
+        "key": "Material",
+        "value": "Carbon Steel"
+      },
+      {
+        "key": "Sizes",
+        "value": "1/2\" to 12\""
+      },
+      {
+        "key": "Standard",
+        "value": "MSS SP-58 (Type 1)"
+      },
+      {
+        "key": "Finish",
+        "value": "Hot Dip Galvanized / Plain"
+      }
+    ]
+  },
+  {
+    "name": "Pipe Roller Support Assembly",
+    "slug": "pipe-roller-support-assembly",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Pipe roller for lines subject to longitudinal movement due to thermal expansion.",
+    "description": "Heavy-duty cast iron roller with steel axle and cradle designed to eliminate binding and absorb thermal expansion stresses in industrial piping.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Type",
+        "value": "Pipe Roller Support"
+      },
+      {
+        "key": "Material",
+        "value": "Cast Iron Roller, Structural Steel Stand"
+      },
+      {
+        "key": "Sizes",
+        "value": "2\" to 24\""
+      },
+      {
+        "key": "Finish",
+        "value": "Corrosion-resistant primer / painted"
+      }
+    ]
+  },
+  {
+    "name": "Industrial U-Bolt Fastener",
+    "slug": "industrial-u-bolt-fastener",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Classic U-bolt for guiding or anchoring pipes to structural profiles and steelwork.",
+    "description": "Standard industrial U-bolt supplied complete with 4 nuts for rigid anchoring or guided pipe movement. Precision-rolled threads ensure maximum holding torque.",
+    "mainImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Type",
+        "value": "Round U-Bolt"
+      },
+      {
+        "key": "Material",
+        "value": "Mild Steel / SS304 / SS316"
+      },
+      {
+        "key": "Finish",
+        "value": "Hot Dip Galvanized"
+      },
+      {
+        "key": "Accessories",
+        "value": "Includes 4 Hex Nuts and Washers"
+      }
+    ]
+  },
+  {
+    "name": "Plain Strut Channel 41x41",
+    "slug": "plain-strut-channel-41x41",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Standard 41x41 profile for heavy framing, cable management, and multi-service trapeze supports.",
+    "description": "Cold roll-formed metal framing channel offering supreme bending resistance. Compatible with all standard spring channel nuts and modular bracket assemblies.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Profile",
+        "value": "41mm x 41mm"
+      },
+      {
+        "key": "Thickness",
+        "value": "2.0mm / 2.5mm"
+      },
+      {
+        "key": "Standard Length",
+        "value": "3 Meter / 6 Meter"
+      },
+      {
+        "key": "Finish",
+        "value": "Pre-Galvanized / Hot Dip Galvanized"
+      }
+    ]
+  },
+  {
+    "name": "Slotted Strut Channel 41x21",
+    "slug": "slotted-strut-channel-41x21",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Low-profile slotted back channel for space-constrained installations and quick alignment.",
+    "description": "Precision punched continuous slotted back channel allows fast threaded rod insertion and on-site positioning without field welding or drilling.",
+    "mainImage": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Profile",
+        "value": "41mm x 21mm (Shallow)"
+      },
+      {
+        "key": "Slot Size",
+        "value": "14mm x 28mm"
+      },
+      {
+        "key": "Material",
+        "value": "Cold Formed Galvanized Steel"
+      }
+    ]
+  },
+  {
+    "name": "Heavy Duty Cantilever Arm",
+    "slug": "heavy-duty-cantilever-arm",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Pre-welded wall bracket for side-mounting pipework, cable trays, and ducts directly to walls.",
+    "description": "High load cantilever arm with heavy-gauge backplate and channel strut member welded with precision fillet weld. Designed for severe loading without deflection.",
+    "mainImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Length",
+        "value": "300mm, 450mm, 600mm, 750mm, 1000mm"
+      },
+      {
+        "key": "Backplate Hole Size",
+        "value": "13mm x 30mm Slotted"
+      },
+      {
+        "key": "Finish",
+        "value": "Hot Dip Galvanized"
+      }
+    ]
+  },
+  {
+    "name": "Channel Spring Nut and Bolt Set",
+    "slug": "channel-spring-nut-bolt-set",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Self-aligning zinc-plated spring nuts and high-tensile hardware for rapid channel connections.",
+    "description": "Zinc-plated case-hardened spring nut with alternating grooves that grip into channel return lips, providing outstanding slip-resistance and vibration tolerance.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Thread Size",
+        "value": "M8, M10, M12, M16"
+      },
+      {
+        "key": "Spring Type",
+        "value": "Long Spring (for 41x41) / Short Spring (for 41x21)"
+      },
+      {
+        "key": "Grade",
+        "value": "Grade 4.8 / 8.8 High Tensile Steel"
+      }
+    ]
+  },
+  {
+    "name": "Rigid Fixing Point Assembly",
+    "slug": "rigid-fixing-point-assembly",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Stable anchor clamp designed to withstand extreme axial pipe thermal thrust forces.",
+    "description": "Engineered fixpoint clamp providing complete longitudinal locking for chilled water, hot water, and steam pipelines while maintaining thermal isolation.",
+    "mainImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Application",
+        "value": "Thermal expansion anchor"
+      },
+      {
+        "key": "Max Axial Force",
+        "value": "Up to 35 kN"
+      },
+      {
+        "key": "Sizes",
+        "value": "DN25 to DN250"
+      },
+      {
+        "key": "Material",
+        "value": "Carbon Steel / EPDM sound barrier"
+      }
+    ]
+  },
+  {
+    "name": "Modular Expansion Device",
+    "slug": "modular-expansion-device",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Single and multi-tier sliding guide to safely accommodate long-run pipe expansion.",
+    "description": "Low-friction sliding support block designed to allow unrestricted axial motion with zero binding under heavy pipe loads.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Slide Travel",
+        "value": "100mm / 150mm"
+      },
+      {
+        "key": "Friction Coefficient",
+        "value": "0.15 PTFE slide plate"
+      },
+      {
+        "key": "Finish",
+        "value": "Electro-galvanized"
+      }
+    ]
+  },
+  {
+    "name": "Heavy Duty Beam Clamps",
+    "slug": "heavy-duty-beam-clamps",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Clamping attachment to structural I-beams and channels without drilling or field welding.",
+    "description": "Drop-forged carbon steel beam clamp with cone-pointed set screw and locking nut. Meets high seismic and static load ratings.",
+    "mainImage": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Flange Thickness",
+        "value": "Up to 26mm"
+      },
+      {
+        "key": "Rod Connection",
+        "value": "M10, M12"
+      },
+      {
+        "key": "Safe Working Load",
+        "value": "4.5 kN"
+      },
+      {
+        "key": "Finish",
+        "value": "Ductile Iron, Electro-galvanized"
+      }
+    ]
+  },
+  {
+    "name": "Universal Structural Base Plates",
+    "slug": "universal-structural-base-plates",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Multi-hole base plate for anchoring vertical strut stanchions to concrete floors or walls.",
+    "description": "Pre-punched 6mm thick base plate engineered for high moment load transfer from vertical support legs directly into concrete foundations.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Plate Thickness",
+        "value": "6.0mm"
+      },
+      {
+        "key": "Anchor Holes",
+        "value": "2-hole / 4-hole (14mm diameter)"
+      },
+      {
+        "key": "Welding",
+        "value": "Continuous robotic seam weld"
+      }
+    ]
+  },
+  {
+    "name": "Industrial Anti-Vibration Isolator",
+    "slug": "industrial-anti-vibration-isolator",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Spring and neoprene elastomeric mounts to isolate pipe vibration and reduce structure-borne noise.",
+    "description": "High deflection spring mount designed for pumps, chillers, and suspended piping. Prevents mechanical vibration transmission into building structures.",
+    "mainImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Type",
+        "value": "Anti Vibration Isolator"
+      },
+      {
+        "key": "Sizes",
+        "value": "Min – 50kg, 100kg | Max – Customization available"
+      },
+      {
+        "key": "Finish",
+        "value": "Painted / Powder Coated"
+      },
+      {
+        "key": "Min Load",
+        "value": "As per Size"
+      },
+      {
+        "key": "Max Load",
+        "value": "As per Size"
+      }
+    ]
+  },
+  {
+    "name": "Seismic Sway Brace Assembly",
+    "slug": "seismic-sway-brace-assembly",
+    "category": "Anti Vibration Solutions",
+    "shortDescription": "Rigid and cable seismic sway bracing systems to protect critical MEP piping during earthquakes.",
+    "description": "Code-compliant seismic lateral and longitudinal brace fitting designed to restrain MEP distribution systems against seismic and wind forces.",
+    "mainImage": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&q=80",
+    "specificationImage": "",
+    "isActive": true,
+    "specifications": [
+      {
+        "key": "Standard",
+        "value": "NFPA 13 & ASCE 7 compliant"
+      },
+      {
+        "key": "Brace Angle",
+        "value": "30° to 90° adjustable"
+      },
+      {
+        "key": "Material",
+        "value": "High Strength Structural Steel"
+      }
+    ]
+  }
+]

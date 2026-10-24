@@ -19,10 +19,17 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     const { id } = await params;
     const body = await req.json();
     await dbConnect();
-    const product = await Product.findByIdAndUpdate(id, body, { new: true, runValidators: true });
+
+    // Use $set to ensure fields like specificationImage are explicitly written
+    const product = await Product.findByIdAndUpdate(
+      id,
+      { $set: body },
+      { new: true, runValidators: true }
+    );
     if (!product) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json(product);
   } catch (error: any) {
+    console.error('Error updating product:', error);
     return NextResponse.json({ error: error.message || 'Failed to update' }, { status: 500 });
   }
 }

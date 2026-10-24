@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, useRef, ReactNode } from 'react';
-import { ArrowRight, ArrowUpRight, Menu, X, Factory, Building2, Zap, Wrench, ShieldCheck, CheckCircle2, Cog, Leaf, Mail, Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Menu, X, Factory, Building2, Zap, Wrench, ShieldCheck, CheckCircle2, Cog, Leaf, Mail, Phone, MessageCircle, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Carousel,
@@ -328,8 +328,8 @@ export function ProductCards({ items = products, limit }: { items?: any[], limit
                 onClick={() => api?.scrollTo(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`transition-all duration-300 rounded-full h-2 ${current === idx
-                    ? 'w-8 bg-primary shadow-sm'
-                    : 'w-2 bg-primary/20 hover:bg-primary/40'
+                  ? 'w-8 bg-primary shadow-sm'
+                  : 'w-2 bg-primary/20 hover:bg-primary/40'
                   }`}
               />
             ))}
@@ -382,65 +382,61 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3>Registered Office &amp; Contact</h3>
+            <h3>Registered Office</h3>
             <p className="text-[11px] font-bold text-white/95 uppercase tracking-wide mb-1">
               PIPE SUPPORTS AND FIXING SYSTEMS PRIVATE LIMITED
             </p>
-            <p className="text-[12px] leading-relaxed opacity-80 mb-3">
+            <p className="text-[12px] leading-relaxed opacity-80">
               F-C/705 Bhagirath Residency, Ganesh Nagar, Badlapur E.D., Ambarnath, Thane – 421503, Maharashtra, India
             </p>
-            <div className="pt-2 border-t border-white/10 space-y-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[12px]">
+          </div>
+        </div>
+
+        {/* Branded strip replicating reference UI with UNIclamp project color theme */}
+        <div className="mt-12 pt-8 border-t border-white/15">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+              <div className="shrink-0">
+                <Logo size="lg" />
+              </div>
+            </div>
+
+            <div className="shrink-0 flex items-center lg:justify-end">
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-10 bg-secondary rounded-full" />
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block mb-0.5">
-                    Business Email
+                  <span className="font-heading font-extrabold text-base tracking-wider text-white block leading-none">
+                    UNIclamp
                   </span>
-                  <a
-                    href="mailto:pipesupportsystems@gmail.com"
-                    className="inline-flex items-center gap-1.5 text-white/95 hover:text-secondary transition-colors font-medium break-all"
-                  >
-                    <Mail size={13} className="shrink-0 text-secondary" />
-                    pipesupportsystems@gmail.com
-                  </a>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-secondary font-bold block mb-0.5">
-                    Contact / WhatsApp
+                  <span className="text-[10px] tracking-widest uppercase text-secondary/90 font-medium block mt-1">
+                    Quality &amp; Precision Pipe Supports
                   </span>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="tel:+919579294968"
-                      className="inline-flex items-center gap-1 text-white/95 hover:text-secondary transition-colors font-medium whitespace-nowrap"
-                    >
-                      <Phone size={13} className="shrink-0 text-secondary" />
-                      9579294968
-                    </a>
-                    <span className="text-white/30">|</span>
-                    <a
-                      href="https://wa.me/919579294968"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-white/95 hover:text-[#25D366] transition-colors font-medium whitespace-nowrap"
-                      title="Chat on WhatsApp"
-                    >
-                      <MessageCircle size={13} className="shrink-0 text-[#25D366]" />
-                      WhatsApp
-                    </a>
-                  </div>
                 </div>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-[12px] text-white/90 hover:text-secondary transition-colors font-medium pt-1"
-              >
-                <ArrowUpRight size={13} className="text-secondary" />
-                Submit an enquiry online
-              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-y-3 gap-x-8 text-[12.5px] text-white/80 py-4 border-t border-white/10">
+            <div className="inline-flex items-center gap-2">
+              <MapPin size={15} className="text-secondary shrink-0" />
+              <span>F-C/705 Bhagirath Residency, Ganesh Nagar, Badlapur, Thane – 421503, India</span>
+            </div>
+            <div className="inline-flex items-center gap-2">
+              <Phone size={14} className="text-secondary shrink-0" />
+              <a href="tel:+919579294968" className="hover:text-secondary transition-colors font-medium">
+                +91 9579294968
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-2">
+              <Mail size={14} className="text-secondary shrink-0" />
+              <a href="mailto:pipesupportsystems@gmail.com" className="hover:text-secondary transition-colors font-medium">
+                pipesupportsystems@gmail.com
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
+        <div className="footer-bottom mt-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
             <span>© 2026 UNIclamp. All rights reserved.</span>
             <span className="hidden sm:inline opacity-40">|</span>

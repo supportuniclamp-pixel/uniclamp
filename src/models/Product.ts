@@ -12,9 +12,15 @@ const ProductSchema = new mongoose.Schema({
   shortDescription: { type: String },
   description: { type: String },
   specifications: [SpecificationSchema],
+  specificationImage: { type: String },
   images: [{ type: String }],
   isActive: { type: Boolean, default: true },
 }, { timestamps: true });
+
+// If model was previously compiled without specificationImage, replace or update schema
+if (mongoose.models.Product && !mongoose.models.Product.schema.path('specificationImage')) {
+  mongoose.models.Product.schema.add({ specificationImage: { type: String } });
+}
 
 const Product: mongoose.Model<any> = mongoose.models.Product || mongoose.model('Product', ProductSchema);
 export default Product;
